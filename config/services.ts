@@ -1,22 +1,22 @@
 export const services = [
   {
     name: "Full Groom",
-    description: "The complete package. Bath, haircut, nail trim, ear cleaning, and blow dry. We tailor the cut to your dog's breed standard or your preferred style.",
+    description: "The complete refresh. Your dog walks out looking and smelling incredible — bath, haircut, nails, ears, the works.",
   },
   {
     name: "Bath & Brush",
-    description: "Perfect for dogs who just need a refresh. Full bath with premium shampoo, thorough brush-out, and blow dry. No haircut included.",
+    description: "Perfect for dogs who need a cleanup, not a makeover. Fresh coat, smooth brush-out, no scissors.",
   },
   {
     name: "Nail Trim",
-    description: "Quick, stress-free nail trimming with optional grinding for smooth edges. Most dogs are done in minutes.",
+    description: "Quick, gentle nail trimming. Most dogs are done in under 10 minutes. Your floors will thank you.",
   },
   {
     name: "Teeth Brushing",
-    description: "An optional add-on using enzymatic toothpaste to help keep your dog's teeth clean and breath fresh between vet visits.",
+    description: "Fresh breath and cleaner teeth. An easy add-on that makes a real difference.",
   },
   {
     name: "De-shed Treatment",
-    description: "For heavy shedders. Uses a special de-shedding shampoo and conditioning treatment followed by thorough undercoat removal.",
+    description: "If your dog is 50% fur, this is for you. Specialized treatment that actually reduces shedding.",
   },
 ];

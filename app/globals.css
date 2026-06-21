@@ -35,6 +35,11 @@
   --brand-slate: #64748B;
   --brand-border: #E2E8F0;
   --brand-muted: #F1F5F9;
+
+  --color-peach: #FEF3E2;
+  --color-sky: #E0F2FE;
+  --color-lavender: #F3E8FF;
+  --color-mint: #ECFDF5;
 }
 
 @theme inline {
@@ -63,17 +68,58 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-display: var(--font-display-serif), var(--font-sans);
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: var(--font-lora), Georgia, serif;
+  --font-accent: var(--font-caveat), cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.15;
+}
+
+p, li {
+  line-height: 1.75;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+.organic-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.10;
+}
+
+@keyframes float-bubble {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(-5px); }
+  75% { transform: translateY(-25px) translateX(8px); }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.10);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+  animation: float-bubble 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 0 1.5rem;
+  touch-action: pan-x;
 }
 
 @media (prefers-reduced-motion: reduce) {

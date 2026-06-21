@@ -12,6 +12,7 @@ import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { PageReveal } from "@/components/PageReveal";
+import { StickyCTA } from "@/components/StickyCTA";
 
 export default function Home() {
   const [revealDone, setRevealDone] = useState(false);
@@ -32,6 +33,7 @@ export default function Home() {
         </Suspense>
       </main>
       <Footer />
+      <StickyCTA />
     </PageReveal>
   );
 }

@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Serif_Display } from "next/font/google";
+import { Lora, Quicksand, Caveat } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
-const dmSerif = DM_Serif_Display({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-display-serif",
-  display: "swap",
-});
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
+const quicksand = Quicksand({ subsets: ["latin"], variable: "--font-quicksand" });
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat" });
 
 export const metadata: Metadata = {
   title: {
@@ -59,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`min-h-screen antialiased font-sans ${outfit.variable} ${dmSerif.variable}`}
+        className={`min-h-screen antialiased ${lora.variable} ${quicksand.variable} ${caveat.variable}`}
       >
         <script
           type="application/ld+json"

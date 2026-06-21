@@ -32,13 +32,28 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="bg-[#0F172A] px-6 md:px-12 pt-16 pb-8 text-white"
+    <footer
+      className="bg-[#0F172A] px-6 md:px-12 pt-16 pb-8 text-white relative overflow-hidden"
     >
+      {/* Decorative paw print row at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#F97316]/20 to-transparent pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-4 left-0 right-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="flex justify-center gap-16 opacity-[0.06]">
+          {["🐾", "🐾", "🐾", "🐾", "🐾", "🐾", "🐾", "🐾"].map((p, i) => (
+            <span key={i} className="text-xl select-none" style={{ transform: `rotate(${(i * 15) - 50}deg)` }}>🐾</span>
+          ))}
+        </div>
+      </div>
+      {/* Floating bubbles */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="bubble size-[50px] top-[20%] left-[5%] !bg-white/[0.02] !border-white/[0.03]" style={{ animationDelay: "0s" }} />
+        <div className="bubble size-[70px] top-[50%] right-[10%] !bg-white/[0.02] !border-white/[0.03]" style={{ animationDelay: "2s" }} />
+        <div className="bubble size-[30px] top-[75%] left-[30%] !bg-white/[0.02] !border-white/[0.03]" style={{ animationDelay: "4s" }} />
+      </div>
+      {/* Color accent blobs */}
+      <div className="absolute top-[15%] right-[25%] w-[200px] h-[200px] rounded-full bg-[#F97316]/[0.04] pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-[20%] left-[10%] w-[150px] h-[150px] rounded-full bg-[#E0F2FE]/[0.03] pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-[60%] right-[5%] w-[120px] h-[120px] rounded-full bg-[#F3E8FF]/[0.03] pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
@@ -50,8 +65,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 max-w-sm leading-relaxed">
-              {content.footer.tagline}. One-on-one grooming in the comfort of
-              your driveway.
+              Professional grooming that comes to you. One dog at a time, no cages,
+              no stress — just a clean, happy pup and a groomer who remembers their name.
             </p>
             <div className="flex items-center gap-3 mt-2">
               {socials.map((s) => (
@@ -61,7 +76,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Follow us on ${s.name}`}
-                  className="flex size-10 items-center justify-center rounded-xl bg-white/5 text-white/40 transition-all hover:bg-white/10 hover:text-white"
+                  className="flex size-10 items-center justify-center rounded-xl bg-white/5 text-white/70 transition-all hover:bg-white/10 hover:text-white"
                 >
                   <s.icon className="size-5" aria-hidden="true" />
                 </a>
@@ -79,7 +94,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors"
+                    className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -96,19 +111,19 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href={`tel:${contact.phone.replace(/[^0-9+]/g, "")}`}
-                className="flex items-center gap-2.5 text-sm text-white/40 transition-colors hover:text-white"
+                className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-white"
               >
                 <Phone className="size-3.5 shrink-0" aria-hidden="true" />
                 {contact.phone}
               </a>
               <a
                 href={`mailto:${contact.email}`}
-                className="flex items-center gap-2.5 text-sm text-white/40 transition-colors hover:text-white"
+                className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-white"
               >
                 <Mail className="size-3.5 shrink-0" aria-hidden="true" />
                 {contact.email}
               </a>
-              <div className="flex items-start gap-2.5 text-sm text-white/40">
+              <div className="flex items-start gap-2.5 text-sm text-white/60">
                 <MapPin className="size-3.5 shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
                   <p>{serviceArea}</p>
@@ -132,6 +147,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

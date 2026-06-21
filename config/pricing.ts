@@ -4,7 +4,7 @@ export const pricing = [
     description: "Bath, haircut, nail trim, ear clean, and blow dry",
     price: 75,
     duration: "~90 min",
-    idealFor: "Best for most dogs",
+    idealFor: "Dogs who need the full spa day",
     included: [
       "Breed-specific or custom haircut",
       "Premium shampoo & conditioner",
@@ -16,7 +16,7 @@ export const pricing = [
     description: "Full bath, blow dry, and brush out. No haircut.",
     price: 55,
     duration: "~60 min",
-    idealFor: "Quick refresh between grooms",
+    idealFor: "The between-groom glow-up",
     included: [
       "Premium shampoo & blow dry",
       "Thorough brush-out",
@@ -28,7 +28,7 @@ export const pricing = [
     description: "Quick and gentle nail trimming with optional filing",
     price: 20,
     duration: "~15 min",
-    idealFor: "Quick maintenance",
+    idealFor: "Clicky nails on hardwood floors",
     included: [
       "Gentle nail trimming",
       "Optional smooth filing",
@@ -39,7 +39,7 @@ export const pricing = [
     description: "Add-on: enzymatic toothpaste for fresh breath",
     price: 10,
     duration: "~10 min",
-    idealFor: "Fresh breath between vet visits",
+    idealFor: "That breath when they yawn in your face",
     included: [
       "Enzymatic toothpaste",
       "Gentle brushing",
@@ -50,7 +50,7 @@ export const pricing = [
     description: "Add-on: specialized shampoo and undercoat removal",
     price: 25,
     duration: "~30 min",
-    idealFor: "Heavy shedders",
+    idealFor: "If your dog is 50% fur",
     included: [
       "De-shedding shampoo & conditioner",
       "Undercoat removal",

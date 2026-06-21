@@ -8,14 +8,14 @@ test.describe("Bubble Paws E2E", () => {
 
   test("hero section is visible", async ({ page }) => {
     await page.goto("/");
-    const headline = page.getByText("Mobile Dog Grooming in South Austin");
+    const headline = page.locator("#home").getByText("Grooming without");
     await expect(headline).toBeVisible();
   });
 
   test("navigation links scroll to correct sections", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "About" }).click();
+    await page.getByRole("link", { name: "About" }).first().click();
     await expect(page.locator("#about")).toBeVisible();
 
     await page.getByRole("link", { name: "Services" }).first().click();
@@ -33,15 +33,15 @@ test.describe("Bubble Paws E2E", () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
 
-    await expect(page.getByRole("heading", { name: "Bubble Paws" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Gallery" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Bubble Paws" }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Gallery" }).first()).toBeVisible();
   });
 
   test("contact form shows validation errors on empty submit", async ({ page }) => {
     await page.goto("/");
 
     await page.locator("#contact").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Send Message" }).click();
+    await page.getByRole("button", { name: "Book My Pup" }).click();
 
     await expect(page.getByText("Name must be at least 2 characters")).toBeVisible();
     await expect(page.getByText("Enter a valid phone number")).toBeVisible();
@@ -60,23 +60,26 @@ test.describe("Bubble Paws E2E", () => {
     await page.fill('input[id="email"]', "jane@example.com");
     await page.fill('input[id="dogBreed"]', "Golden Retriever");
 
-    await page.getByRole("combobox").click();
+    await page.getByRole("combobox", { name: "Service Package" }).click();
+    await page.getByRole("option", { name: "Full Groom (~90 min)" }).click();
+
+    await page.getByRole("combobox", { name: "Dog Size" }).click();
     await page.getByRole("option", { name: "Medium (20-50 lbs)" }).click();
 
-    await page.getByRole("button", { name: "Send Message" }).click();
+    await page.getByRole("button", { name: "Book My Pup" }).click();
 
-    await expect(page.getByText("Message Sent!")).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText("You're in!")).toBeVisible({ timeout: 10000 });
   });
 
-  test("gallery renders 6 before/after pairs", async ({ page }) => {
+  test("gallery renders before/after pairs", async ({ page }) => {
     await page.goto("/");
 
     await page.locator("#gallery").scrollIntoViewIfNeeded();
 
     const beforeLabels = page.locator("#gallery span").filter({ hasText: /^Before$/ });
     const afterLabels = page.locator("#gallery span").filter({ hasText: /^After$/ });
-    await expect(beforeLabels).toHaveCount(6);
-    await expect(afterLabels).toHaveCount(6);
+    await expect(beforeLabels).toHaveCount(12);
+    await expect(afterLabels).toHaveCount(12);
   });
 
   test("404 page shows for nonexistent routes", async ({ page }) => {

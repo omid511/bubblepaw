@@ -13,4 +13,12 @@ export default defineConfig({
       use: { browserName: "chromium" },
     },
   ],
+  webServer: {
+    command: "bun run dev",
+    port: 3000,
+    reuseExistingServer: true,
+    env: {
+      NEXT_PUBLIC_DEMO: "true",
+    },
+  },
 });
