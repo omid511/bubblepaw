@@ -33,21 +33,22 @@ test.describe("Bubble Paws E2E", () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
 
-    await expect(page.getByRole("link", { name: "Bubble Paws" }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Gallery" }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Pricing" }).first()).toBeVisible();
   });
 
   test("contact form shows validation errors on empty submit", async ({ page }) => {
     await page.goto("/");
 
     await page.locator("#contact").scrollIntoViewIfNeeded();
-    await page.getByRole("button", { name: "Book My Pup" }).click();
+    await page.getByRole("button", { name: "Send Message" }).click();
 
-    await expect(page.getByText("Name must be at least 2 characters")).toBeVisible();
-    await expect(page.getByText("Enter a valid phone number")).toBeVisible();
-    await expect(page.getByText("Enter a valid email address")).toBeVisible();
-    await expect(page.getByText("Dog breed must be at least 2 characters")).toBeVisible();
-    await expect(page.getByText("Please select a dog size")).toBeVisible();
+    await expect(page.getByText("Please select a service package.")).toBeVisible();
+    await expect(page.getByText("Name must be at least 2 characters.")).toBeVisible();
+    await expect(page.getByText("Enter a valid phone number.")).toBeVisible();
+    await expect(page.getByText("Enter a valid email address.")).toBeVisible();
+    await expect(page.getByText("Dog breed must be at least 2 characters.")).toBeVisible();
+    await expect(page.getByText("Please select a dog size.")).toBeVisible();
   });
 
   test("contact form submits successfully in demo mode", async ({ page }) => {
@@ -55,20 +56,20 @@ test.describe("Bubble Paws E2E", () => {
 
     await page.locator("#contact").scrollIntoViewIfNeeded();
 
+    await page.getByRole("combobox", { name: "Service Package" }).click();
+    await page.getByRole("option", { name: "Full Groom (~90 min)" }).click();
+
     await page.fill('input[id="name"]', "Jane Doe");
     await page.fill('input[id="phone"]', "5125550123");
     await page.fill('input[id="email"]', "jane@example.com");
     await page.fill('input[id="dogBreed"]', "Golden Retriever");
 
-    await page.getByRole("combobox", { name: "Service Package" }).click();
-    await page.getByRole("option", { name: "Full Groom (~90 min)" }).click();
-
     await page.getByRole("combobox", { name: "Dog Size" }).click();
     await page.getByRole("option", { name: "Medium (20-50 lbs)" }).click();
 
-    await page.getByRole("button", { name: "Book My Pup" }).click();
+    await page.getByRole("button", { name: "Send Message" }).click();
 
-    await expect(page.getByText("You're in!")).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText("Message sent!")).toBeVisible({ timeout: 10000 });
   });
 
   test("gallery renders before/after pairs", async ({ page }) => {
