@@ -82,7 +82,7 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="scroll-mt-20 relative bg-[#FFF8F0] py-20 md:py-32">
+    <section id="gallery" className="scroll-mt-20 relative bg-[#FFF8F0] py-20 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -139,7 +139,7 @@ export default function Gallery() {
                   <img
                     src={img.src}
                     alt={`${img.name} before and after grooming`}
-                    className="h-[350px] w-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-[250px] sm:h-[300px] md:h-[350px] w-auto max-w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                     draggable={false}
                   />

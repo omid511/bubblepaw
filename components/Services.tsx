@@ -8,9 +8,9 @@ const icons = [Scissors, Droplets, Heart, Sparkles, Wind];
 
 export default function Services() {
   return (
-    <section id="services" className="scroll-mt-20 relative bg-[#F8FAFC] py-20 md:py-32 px-6 md:px-12">
-      <div className="absolute -right-32 top-1/4 w-[500px] h-[500px] rounded-full bg-[#F97316]/[0.08] pointer-events-none" aria-hidden="true" />
-      <div className="absolute -left-40 bottom-1/4 w-[450px] h-[450px] rounded-full bg-[#0F172A]/[0.06] pointer-events-none" aria-hidden="true" />
+    <section id="services" className="scroll-mt-20 relative bg-[#F8FAFC] py-20 md:py-32 px-6 md:px-12 overflow-hidden">
+      <div className="absolute -right-32 top-1/4 w-[500px] h-[500px] rounded-full bg-[#F97316]/[0.08] pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute -left-40 bottom-1/4 w-[450px] h-[450px] rounded-full bg-[#0F172A]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
       <div className="absolute top-16 right-[20%] w-[140px] h-[140px] rounded-full bg-[#ECFDF5]/80 pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-24 left-[15%] w-[100px] h-[100px] rounded-full bg-[#FEF3E2]/70 pointer-events-none" aria-hidden="true" />
       <div className="absolute top-[50%] right-[8%] w-[80px] h-[80px] rounded-full bg-[#F3E8FF]/60 pointer-events-none" aria-hidden="true" />
@@ -25,7 +25,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:sticky lg:top-24 pl-8"
+            className="lg:sticky lg:top-24 md:pl-8"
           >
             <p className="text-sm font-semibold text-[#F97316] uppercase tracking-wider mb-4 font-[var(--font-accent)]">
               What We Do
@@ -56,7 +56,7 @@ export default function Services() {
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   className="group"
                 >
-                  <div className={`flex items-start gap-5 py-7 border-b border-slate-200 last:border-b-0 -mx-4 px-4 rounded-lg group-hover:bg-[#F97316]/[0.05] transition-colors ${index % 2 === 1 ? "ml-6" : ""}`}>
+                  <div className={`flex items-start gap-5 py-7 border-b border-slate-200 last:border-b-0 -mx-4 px-4 rounded-lg group-hover:bg-[#F97316]/[0.05] transition-colors ${index % 2 === 1 ? "md:ml-6" : ""}`}>
                     <div className="shrink-0 size-14 rounded-2xl bg-[#F97316]/12 flex items-center justify-center group-hover:bg-[#F97316]/20 transition-colors">
                       <Icon className="size-6 text-[#F97316] group-hover:text-[#EA580C] transition-colors" />
                     </div>

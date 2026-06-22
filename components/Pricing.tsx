@@ -26,10 +26,10 @@ const SERVICE_SLUGS: Record<string, string> = {
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-20 relative bg-white py-20 md:py-32 px-6 md:px-12">
+    <section id="pricing" className="scroll-mt-20 relative bg-white py-20 md:py-32 px-6 md:px-12 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.06]" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#0F172A]/[0.04]" />
+        <div className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.06] hidden md:block" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#0F172A]/[0.04] hidden md:block" />
         <div className="absolute top-[30%] left-[5%] w-[150px] h-[150px] rounded-full bg-[#FEF3E2]/80" />
         <div className="absolute bottom-[20%] right-[10%] w-[120px] h-[120px] rounded-full bg-[#E0F2FE]/70" />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, #F97316 0.8px, transparent 0.8px)", backgroundSize: "32px 32px" }} />

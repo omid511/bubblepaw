@@ -10,13 +10,13 @@ export default function About() {
   const paragraphs = story.split("\n\n");
 
   return (
-    <section id="about" className="scroll-mt-20 relative bg-white py-20 md:py-32 px-6 md:px-12">
+    <section id="about" className="scroll-mt-20 relative bg-white py-20 md:py-32 px-6 md:px-12 overflow-hidden">
       {/* Decorative circles */}
-      <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.08] pointer-events-none" aria-hidden="true" />
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#0F172A]/[0.06] pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.08] pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#0F172A]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
       {/* Additional decorative elements */}
-      <div className="absolute top-1/4 -right-20 w-[300px] h-[300px] rounded-full bg-[#0EA5E9]/[0.06] pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-1/4 -left-16 w-[200px] h-[200px] rounded-full bg-[#F97316]/[0.06] pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/4 -right-20 w-[300px] h-[300px] rounded-full bg-[#0EA5E9]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute bottom-1/4 -left-16 w-[200px] h-[200px] rounded-full bg-[#F97316]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
       {/* Color accent blobs */}
       <div className="absolute top-20 right-[15%] w-[120px] h-[120px] rounded-full bg-[#FEF3E2]/90 pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-40 left-[10%] w-[100px] h-[100px] rounded-full bg-[#E0F2FE]/80 pointer-events-none" aria-hidden="true" />
@@ -57,7 +57,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative -ml-8 md:-ml-16"
+            className="relative md:-ml-16"
           >
             {/* Background accent */}
             <div className="absolute -inset-4 rounded-3xl bg-[#0EA5E9]/8 -rotate-2" />

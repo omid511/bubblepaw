@@ -277,7 +277,7 @@ export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 bg-[#FFF8F0] py-20 md:py-32 px-6 md:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-20">
           {/* Left: Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

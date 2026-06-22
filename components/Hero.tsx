@@ -25,9 +25,9 @@ export default function Hero({ isReady = false }: { isReady?: boolean }) {
 
       {/* Organic gradient blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="organic-blob w-[500px] h-[500px] -top-20 -left-20 bg-[#F97316]" />
-        <div className="organic-blob w-[600px] h-[600px] top-1/4 -right-40 bg-[#0F172A]" />
-        <div className="organic-blob w-[400px] h-[400px] -bottom-20 left-1/3 bg-[#F97316]" />
+        <div className="organic-blob w-[300px] md:w-[500px] h-[300px] md:h-[500px] -top-20 -left-20 bg-[#F97316]" />
+        <div className="organic-blob w-[350px] md:w-[600px] h-[350px] md:h-[600px] top-1/4 -right-20 md:-right-40 bg-[#0F172A]" />
+        <div className="organic-blob w-[250px] md:w-[400px] h-[250px] md:h-[400px] -bottom-20 left-1/3 bg-[#F97316]" />
       </div>
 
       {/* Wave transition into white (about) */}
@@ -42,7 +42,7 @@ export default function Hero({ isReady = false }: { isReady?: boolean }) {
           {/* Left: Text */}
           <div className="flex flex-col gap-6 max-w-xl">
             <motion.h1
-              className="font-[var(--font-display)] text-6xl md:text-8xl font-normal leading-[1.15] tracking-tight text-[#0F172A]"
+              className="font-[var(--font-display)] text-4xl sm:text-6xl md:text-8xl font-normal leading-[1.15] tracking-tight text-[#0F172A]"
             >
               {["Grooming without", "the car ride."].map((word, i) => (
                 <motion.span

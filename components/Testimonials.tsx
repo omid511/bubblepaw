@@ -6,7 +6,7 @@ import { testimonials } from "@/config/testimonials";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="scroll-mt-20 relative bg-[#0F172A] py-20 md:py-32 px-6 md:px-12">
+    <section id="testimonials" className="scroll-mt-20 relative bg-[#0F172A] py-20 md:py-32 px-6 md:px-12 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 pointer-events-none z-10" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-16 md:h-20 block" preserveAspectRatio="none">
           <path d="M0,30 C120,55 240,15 360,40 C480,65 600,10 720,35 C840,58 960,20 1080,45 C1200,68 1320,25 1440,38 L1440,0 L0,0 Z" fill="#0F172A" />
@@ -28,8 +28,8 @@ export function Testimonials() {
         <div className="absolute top-[70%] right-[50%] w-1 h-1 rounded-full bg-[#ECFDF5]/[0.18]" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/0 via-[#0F172A]/0 to-[#0F172A]/50 pointer-events-none" aria-hidden="true" />
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/[0.04] pointer-events-none" aria-hidden="true" />
-      <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.06] pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/[0.04] pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
 
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-16 md:h-20 block" preserveAspectRatio="none">
@@ -73,7 +73,7 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 + i * 0.1, type: "spring", stiffness: 300, damping: 20 }}
-                className="text-[#F97316]/20 text-[80px] leading-none font-[var(--font-display)] select-none"
+                className="text-[#F97316]/20 text-5xl md:text-[80px] leading-none font-[var(--font-display)] select-none"
                 aria-hidden="true"
               >
                 &ldquo;

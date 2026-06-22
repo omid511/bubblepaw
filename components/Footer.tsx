@@ -38,7 +38,7 @@ export default function Footer() {
       {/* Decorative paw print row at top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#F97316]/20 to-transparent pointer-events-none" aria-hidden="true" />
       <div className="absolute top-4 left-0 right-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="flex justify-center gap-16 opacity-[0.06]">
+        <div className="flex justify-center gap-8 md:gap-16 opacity-[0.06]">
           {["🐾", "🐾", "🐾", "🐾", "🐾", "🐾", "🐾", "🐾"].map((p, i) => (
             <span key={i} className="text-xl select-none" style={{ transform: `rotate(${(i * 15) - 50}deg)` }}>🐾</span>
           ))}
