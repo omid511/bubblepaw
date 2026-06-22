@@ -150,11 +150,18 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
+    function scrollSuccess() {
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+
     if (isDemo) {
       await new Promise((r) => setTimeout(r, 1500));
       console.log("Contact form (demo):", form);
       setSubmitted(true);
       setIsSubmitting(false);
+      scrollSuccess();
       return;
     }
 
@@ -167,6 +174,7 @@ export default function Contact() {
         await new Promise((r) => setTimeout(r, 1500));
         console.log("Contact form (fallback demo - email not configured):", form);
         setSubmitted(true);
+        scrollSuccess();
         return;
       }
       await emailjs.send(
@@ -184,6 +192,7 @@ export default function Contact() {
         publicKey
       );
       setSubmitted(true);
+      scrollSuccess();
     } catch {
       setSubmitError(
         "Something went wrong. Please try again or call us directly."
@@ -203,35 +212,56 @@ export default function Contact() {
 
   if (submitted) {
     return (
-      <section id="contact" className="scroll-mt-20 bg-[#FFF8F0] py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <section id="contact" className="scroll-mt-20 bg-[#FFF8F0] py-20 min-h-[70vh] flex items-center">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="mx-auto max-w-lg rounded-3xl bg-white p-10 text-center shadow-xl border border-[#0F172A]/5"
+            className="mx-auto max-w-lg rounded-3xl bg-white p-10 md:p-12 text-center shadow-[0_12px_60px_rgba(0,0,0,0.12)] border border-[#F97316]/10 relative overflow-hidden"
           >
-            <div className="text-5xl mb-4">🎉</div>
-            <h2 className="mb-3 text-2xl font-[var(--font-display)] text-[#0F172A]">
-              Message sent!
-            </h2>
-            <p className="mb-8 text-slate-500 leading-relaxed">
-              Thanks! We&apos;ll get back to you within 24 hours. Need help
-              sooner? Call us at{" "}
-              <a
-                href={`tel:${contact.phone}`}
-                className="font-medium text-[#F97316] hover:underline"
+            {/* Decorative gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FFF8F0] via-white to-[#FEF3E2] pointer-events-none" />
+
+            {/* Confetti dots */}
+            <div className="absolute top-4 left-6 text-2xl">🎉</div>
+            <div className="absolute top-8 right-8 text-xl">🐾</div>
+            <div className="absolute bottom-6 left-8 text-lg">✨</div>
+            <div className="absolute bottom-10 right-6 text-2xl">🐕</div>
+
+            <div className="relative">
+              <div className="mx-auto mb-5 size-16 rounded-full bg-gradient-to-br from-[#F97316] to-[#EA580C] flex items-center justify-center shadow-[0_4px_20px_rgba(249,115,22,0.3)]">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.2 }}
+                >
+                  <svg className="size-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </motion.div>
+              </div>
+              <h2 className="mb-3 text-2xl md:text-3xl font-[var(--font-display)] text-[#0F172A]">
+                Message sent!
+              </h2>
+              <p className="mb-8 text-slate-500 leading-relaxed">
+                Thanks! We&apos;ll get back to you within 24 hours. Need help
+                sooner? Call us at{" "}
+                <a
+                  href={`tel:${contact.phone}`}
+                  className="font-medium text-[#F97316] hover:underline"
+                >
+                  {contact.phone}
+                </a>
+              </p>
+              <Button
+                onClick={resetForm}
+                variant="outline"
+                className="rounded-full"
               >
-                {contact.phone}
-              </a>
-            </p>
-            <Button
-              onClick={resetForm}
-              variant="outline"
-              className="rounded-full"
-            >
-              Send another message
-            </Button>
+                Send another message
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
