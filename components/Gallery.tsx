@@ -82,14 +82,14 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="scroll-mt-20 relative bg-[#FFF8F0] py-20 md:py-32 overflow-hidden">
+    <section id="gallery" className="scroll-mt-20 relative bg-[#FFF8F0] py-12 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16 relative z-10"
+          className="text-center mb-8 md:mb-16 relative z-10"
         >
           <p className="text-sm font-semibold text-[#F97316] uppercase tracking-wider mb-4 font-[var(--font-accent)]">
             See the difference
@@ -98,11 +98,11 @@ export default function Gallery() {
             initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
             whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0)" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.1] tracking-tight text-[#0F172A] mb-5"
+            className="font-[var(--font-display)] text-2xl md:text-4xl lg:text-5xl font-normal leading-[1.1] tracking-tight text-[#0F172A] mb-5"
           >
             Before &amp; after
           </motion.h2>
-          <p className="text-slate-600 text-lg max-w-xl mx-auto">
+          <p className="text-slate-600 text-base md:text-lg max-w-xl mx-auto">
             Real transformations from real appointments.
           </p>
         </motion.div>
@@ -139,7 +139,7 @@ export default function Gallery() {
                   <img
                     src={img.src}
                     alt={`${img.name} before and after grooming`}
-                    className="h-[250px] sm:h-[300px] md:h-[350px] w-auto max-w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-[180px] sm:h-[250px] md:h-[350px] w-auto max-w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                     draggable={false}
                   />
@@ -159,8 +159,8 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#FFF8F0] to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#FFF8F0] to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-[#FFF8F0] to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-[#FFF8F0] to-transparent z-10" />
       </motion.div>
 
       <div className="h-16 md:h-20 bg-gradient-to-b from-[#FFF8F0] to-white" aria-hidden="true" />

@@ -38,7 +38,7 @@ export default function Hero({ isReady = false }: { isReady?: boolean }) {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-32 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-center">
           {/* Left: Text */}
           <div className="flex flex-col gap-6 max-w-xl">
             <motion.h1
@@ -83,7 +83,7 @@ export default function Hero({ isReady = false }: { isReady?: boolean }) {
                     whileHover={{ scale: 1.04, boxShadow: "0 8px 30px rgba(249,115,22,0.45)" }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="bg-[#F97316] hover:bg-[#EA580C] text-white text-base px-8 py-4 rounded-full font-semibold shadow-md transition-colors"
+                    className="bg-[#F97316] hover:bg-[#EA580C] text-white text-base px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold shadow-md transition-colors"
                   >
                     Book Now
                   </motion.button>

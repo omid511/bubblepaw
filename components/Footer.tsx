@@ -55,7 +55,7 @@ export default function Footer() {
       <div className="absolute bottom-[20%] left-[10%] w-[150px] h-[150px] rounded-full bg-[#E0F2FE]/[0.03] pointer-events-none" aria-hidden="true" />
       <div className="absolute top-[60%] right-[5%] w-[120px] h-[120px] rounded-full bg-[#F3E8FF]/[0.03] pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-2">

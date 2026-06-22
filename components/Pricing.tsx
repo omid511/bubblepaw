@@ -26,7 +26,7 @@ const SERVICE_SLUGS: Record<string, string> = {
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-20 relative bg-white py-20 md:py-32 px-6 md:px-12 overflow-hidden">
+    <section id="pricing" className="scroll-mt-20 relative bg-white py-12 md:py-32 px-6 md:px-12 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.06] hidden md:block" />
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#0F172A]/[0.04] hidden md:block" />
@@ -55,11 +55,11 @@ export default function Pricing() {
             initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
             whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0)" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="font-[var(--font-display)] text-4xl md:text-5xl font-normal leading-[1.1] tracking-tight text-[#0F172A] mb-5"
+            className="font-[var(--font-display)] text-3xl md:text-5xl font-normal leading-[1.1] tracking-tight text-[#0F172A] mb-5"
           >
             Simple, honest pricing
           </motion.h2>
-          <p className="text-slate-600 text-lg max-w-xl mx-auto">
+          <p className="text-slate-600 text-base md:text-lg max-w-xl mx-auto">
             Every quote is upfront — no surprises. Final price depends on breed,
             size, and coat condition.
           </p>
@@ -76,7 +76,7 @@ export default function Pricing() {
                 whileHover={!isPopular ? { y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.08)", backgroundColor: "#FEF3E2" } : undefined}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative rounded-xl p-7 transition-shadow flex flex-col ${
+                className={`relative rounded-xl p-5 md:p-7 transition-shadow flex flex-col ${
                   isPopular
                     ? "bg-[#0F172A] text-white shadow-[0_12px_60px_rgba(249,115,22,0.25)]"
                     : "bg-white ring-1 ring-slate-200 shadow-[0_8px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_50px_rgba(0,0,0,0.12)] border-t-2 border-t-[#F97316]/20"
@@ -159,7 +159,7 @@ export default function Pricing() {
               return (
               <div
                 key={item.name}
-                className="flex items-center gap-4 bg-[#FFF8F0] rounded-2xl px-6 py-4 border border-[#F97316]/15 shadow-md hover:shadow-lg transition-shadow"
+                className="flex items-center gap-3 md:gap-4 bg-[#FFF8F0] rounded-2xl px-4 md:px-6 py-3 md:py-4 border border-[#F97316]/15 shadow-md hover:shadow-lg transition-shadow"
               >
                 <span className="size-8 rounded-full bg-[#FFF8F0] flex items-center justify-center shrink-0 border border-[#F97316]/10">
                   {AddonIcon ? <AddonIcon className="size-4 text-[#F97316]" /> : <span className="text-sm text-[#F97316] font-medium">&ndash;</span>}

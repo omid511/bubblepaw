@@ -6,7 +6,7 @@ import { testimonials } from "@/config/testimonials";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="scroll-mt-20 relative bg-[#0F172A] py-20 md:py-32 px-6 md:px-12 overflow-hidden">
+    <section id="testimonials" className="scroll-mt-20 relative bg-[#0F172A] py-12 md:py-32 px-6 md:px-12 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 pointer-events-none z-10" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-16 md:h-20 block" preserveAspectRatio="none">
           <path d="M0,30 C120,55 240,15 360,40 C480,65 600,10 720,35 C840,58 960,20 1080,45 C1200,68 1320,25 1440,38 L1440,0 L0,0 Z" fill="#0F172A" />

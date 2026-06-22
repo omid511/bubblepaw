@@ -218,7 +218,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="mx-auto max-w-lg rounded-3xl bg-white p-10 md:p-12 text-center shadow-[0_12px_60px_rgba(0,0,0,0.12)] border border-[#F97316]/10 relative overflow-hidden"
+            className="mx-auto max-w-lg rounded-3xl bg-white p-8 md:p-12 text-center shadow-[0_12px_60px_rgba(0,0,0,0.12)] border border-[#F97316]/10 relative overflow-hidden"
           >
             {/* Decorative gradient background */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#FFF8F0] via-white to-[#FEF3E2] pointer-events-none" />
@@ -307,9 +307,9 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="scroll-mt-20 bg-[#FFF8F0] py-20 md:py-32 px-6 md:px-12">
+    <section id="contact" className="scroll-mt-20 bg-[#FFF8F0] py-12 md:py-32 px-6 md:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-20">
           {/* Left: Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -325,13 +325,13 @@ export default function Contact() {
               <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.1] tracking-tight text-[#0F172A] mb-5">
                 Let&apos;s get your pup booked
               </h2>
-              <p className="text-slate-500 text-lg leading-relaxed">
+              <p className="text-slate-500 text-base md:text-lg leading-relaxed">
                 Fill out the form and we&apos;ll reach out within 24 hours to
                 schedule your appointment.
               </p>
             </div>
 
-            <div className="space-y-5">
+              <div className="space-y-4 md:space-y-5">
               <a
                 href={`tel:${contact.phone.replace(/[^0-9+]/g, "")}`}
                 className="flex items-center gap-4 group"
@@ -406,9 +406,9 @@ export default function Contact() {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="bg-white rounded-3xl p-8 shadow-xl border border-[#0F172A]/5"
+              className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-[#0F172A]/5"
             >
-              <div className="space-y-5">
+            <div className="space-y-4 md:space-y-5">
                 {/* Service Package select */}
                 <motion.div
                   custom={0}

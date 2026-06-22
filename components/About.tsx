@@ -10,32 +10,32 @@ export default function About() {
   const paragraphs = story.split("\n\n");
 
   return (
-    <section id="about" className="scroll-mt-20 relative bg-white py-20 md:py-32 px-6 md:px-12 overflow-hidden">
+    <section id="about" className="scroll-mt-20 relative bg-white py-12 md:py-32 px-6 md:px-12 overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-[#F97316]/[0.08] pointer-events-none hidden md:block" aria-hidden="true" />
       <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#0F172A]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
       {/* Additional decorative elements */}
       <div className="absolute top-1/4 -right-20 w-[300px] h-[300px] rounded-full bg-[#0EA5E9]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
       <div className="absolute bottom-1/4 -left-16 w-[200px] h-[200px] rounded-full bg-[#F97316]/[0.06] pointer-events-none hidden md:block" aria-hidden="true" />
-      {/* Color accent blobs */}
-      <div className="absolute top-20 right-[15%] w-[120px] h-[120px] rounded-full bg-[#FEF3E2]/90 pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-40 left-[10%] w-[100px] h-[100px] rounded-full bg-[#E0F2FE]/80 pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-[60%] right-[5%] w-[80px] h-[80px] rounded-full bg-[#F3E8FF]/70 pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-[35%] left-[8%] w-[60px] h-[60px] rounded-full bg-[#ECFDF5]/80 pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-[20%] right-[18%] w-[90px] h-[90px] rounded-full bg-[#FEF3E2]/70 pointer-events-none" aria-hidden="true" />
-      {/* Subtle paw accents */}
-      <div className="absolute top-20 right-1/4 text-6xl text-[#F97316]/[0.08] rotate-[-15deg] pointer-events-none select-none" aria-hidden="true">🐾</div>
-      <div className="absolute bottom-32 left-1/3 text-5xl text-[#0EA5E9]/[0.08] rotate-[20deg] pointer-events-none select-none" aria-hidden="true">🐾</div>
-      <div className="absolute top-[45%] right-[12%] text-4xl text-[#F3E8FF]/[0.10] rotate-[35deg] pointer-events-none select-none" aria-hidden="true">🐾</div>
-      <div className="absolute top-[70%] left-[15%] text-3xl text-[#ECFDF5]/[0.12] rotate-[-25deg] pointer-events-none select-none" aria-hidden="true">🐾</div>
-      {/* Small floating circles */}
-      <div className="absolute top-[15%] left-[20%] w-3 h-3 rounded-full bg-[#F97316]/[0.12]" aria-hidden="true" />
-      <div className="absolute top-[55%] right-[25%] w-2 h-2 rounded-full bg-[#0EA5E9]/[0.14]" aria-hidden="true" />
-      <div className="absolute bottom-[15%] left-[40%] w-4 h-4 rounded-full bg-[#F3E8FF]/[0.14]" aria-hidden="true" />
-      <div className="absolute top-[80%] right-[35%] w-2.5 h-2.5 rounded-full bg-[#FEF3E2]/[0.16]" aria-hidden="true" />
-      {/* Small bone shapes via CSS */}
-      <div className="absolute top-[25%] right-[8%] w-10 h-3 rounded-full bg-[#F97316]/[0.08] rotate-45 pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-[30%] left-[5%] w-8 h-2.5 rounded-full bg-[#0EA5E9]/[0.08] -rotate-30 pointer-events-none" aria-hidden="true" />
+      {/* Color accent blobs — hidden on mobile */}
+      <div className="absolute top-20 right-[15%] w-[120px] h-[120px] rounded-full bg-[#FEF3E2]/90 pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute bottom-40 left-[10%] w-[100px] h-[100px] rounded-full bg-[#E0F2FE]/80 pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute top-[60%] right-[5%] w-[80px] h-[80px] rounded-full bg-[#F3E8FF]/70 pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute top-[35%] left-[8%] w-[60px] h-[60px] rounded-full bg-[#ECFDF5]/80 pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute bottom-[20%] right-[18%] w-[90px] h-[90px] rounded-full bg-[#FEF3E2]/70 pointer-events-none hidden md:block" aria-hidden="true" />
+      {/* Subtle paw accents — hidden on mobile */}
+      <div className="absolute top-20 right-1/4 text-6xl text-[#F97316]/[0.08] rotate-[-15deg] pointer-events-none select-none hidden md:block" aria-hidden="true">🐾</div>
+      <div className="absolute bottom-32 left-1/3 text-5xl text-[#0EA5E9]/[0.08] rotate-[20deg] pointer-events-none select-none hidden md:block" aria-hidden="true">🐾</div>
+      <div className="absolute top-[45%] right-[12%] text-4xl text-[#F3E8FF]/[0.10] rotate-[35deg] pointer-events-none select-none hidden md:block" aria-hidden="true">🐾</div>
+      <div className="absolute top-[70%] left-[15%] text-3xl text-[#ECFDF5]/[0.12] rotate-[-25deg] pointer-events-none select-none hidden md:block" aria-hidden="true">🐾</div>
+      {/* Small floating circles — hidden on mobile */}
+      <div className="absolute top-[15%] left-[20%] w-3 h-3 rounded-full bg-[#F97316]/[0.12] hidden md:block" aria-hidden="true" />
+      <div className="absolute top-[55%] right-[25%] w-2 h-2 rounded-full bg-[#0EA5E9]/[0.14] hidden md:block" aria-hidden="true" />
+      <div className="absolute bottom-[15%] left-[40%] w-4 h-4 rounded-full bg-[#F3E8FF]/[0.14] hidden md:block" aria-hidden="true" />
+      <div className="absolute top-[80%] right-[35%] w-2.5 h-2.5 rounded-full bg-[#FEF3E2]/[0.16] hidden md:block" aria-hidden="true" />
+      {/* Small bone shapes via CSS — hidden on mobile */}
+      <div className="absolute top-[25%] right-[8%] w-10 h-3 rounded-full bg-[#F97316]/[0.08] rotate-45 pointer-events-none hidden md:block" aria-hidden="true" />
+      <div className="absolute bottom-[30%] left-[5%] w-8 h-2.5 rounded-full bg-[#0EA5E9]/[0.08] -rotate-30 pointer-events-none hidden md:block" aria-hidden="true" />
       {/* Thin decorative lines */}
       <div className="absolute top-1/3 left-0 w-24 h-px bg-gradient-to-r from-transparent to-[#F97316]/10 pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-1/3 right-0 w-32 h-px bg-gradient-to-l from-transparent to-[#0F172A]/10 pointer-events-none" aria-hidden="true" />
@@ -50,7 +50,7 @@ export default function About() {
       </div>
 
       <div className="mx-auto max-w-7xl relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Image area with decorative frame */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
