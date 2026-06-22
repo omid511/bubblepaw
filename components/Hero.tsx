@@ -71,19 +71,19 @@ export default function Hero({ isReady = false }: { isReady?: boolean }) {
               initial={{ opacity: 0, y: 20 }}
               animate={isReady ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
-              className="flex flex-col sm:flex-row items-center gap-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
             >
               <div
                 ref={magnetic.ref as React.RefObject<HTMLDivElement>}
                 onMouseMove={magnetic.handleMouseMove}
                 onMouseLeave={magnetic.handleMouseLeave}
               >
-                <a href="#contact">
+                <a href="#contact" className="block">
                   <motion.button
                     whileHover={{ scale: 1.04, boxShadow: "0 8px 30px rgba(249,115,22,0.45)" }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="bg-[#F97316] hover:bg-[#EA580C] text-white text-base px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold shadow-md transition-colors"
+                    className="w-full sm:w-auto bg-[#F97316] hover:bg-[#EA580C] text-white text-base px-8 py-4 rounded-full font-semibold shadow-md transition-colors"
                   >
                     Book Now
                   </motion.button>
@@ -91,7 +91,7 @@ export default function Hero({ isReady = false }: { isReady?: boolean }) {
               </div>
               <a
                 href={`tel:+15125550123`}
-                className="inline-flex items-center gap-2 text-sm font-medium text-[#0F172A]/70 hover:text-[#F97316] border border-[#0F172A]/15 hover:border-[#F97316]/30 rounded-lg px-4 py-2 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-medium text-[#0F172A]/70 hover:text-[#F97316] border border-[#0F172A]/15 hover:border-[#F97316]/30 rounded-lg px-4 py-3 transition-colors"
               >
                 <Phone className="size-4" />
                 {contact.phone}
